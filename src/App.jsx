@@ -5,7 +5,6 @@ import {BrowserRouter as Router, Switch} from 'react-router-dom';
 import AdminPrivateRoute from './AdminPrivateRoute';
 import PublicRoute from './PublicRoute';
 
-
 import axios from 'axios';
 
 axios.defaults.baseURL = "http://localhost:8000/";
@@ -39,7 +38,6 @@ function App() {
             </Route> */}
 
             {/* <Route path="/admin" name="Admin" render={(props) => <MasterLayout {...props} />} /> */}
-
 
           </Switch>
         </Router>
