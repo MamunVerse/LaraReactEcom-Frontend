@@ -7,6 +7,7 @@ import axios from 'axios';
 function Navbar() {
 
     const history = useHistory();
+
     const logoutSubmit = (e) => {
         e.preventDefault();
         
@@ -32,7 +33,7 @@ function Navbar() {
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link" to="/register">Register</Link>
-                </li>
+                </li>  
             </ul>
         );
     }
