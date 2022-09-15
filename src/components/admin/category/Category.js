@@ -8,11 +8,11 @@ function Category() {
     const [categoryInput, setCategory] = useState({
         slug: '',
         name: '',
-        descrip: '',
+        description: '',
         status: '',
         meta_title: '',
         meta_keyword: '',
-        meta_descrip: '',
+        meta_description: '',
         error_list: [],
     });
     
@@ -27,11 +27,11 @@ function Category() {
         const data = {
             slug:categoryInput.slug,
             name:categoryInput.name,
-            description:categoryInput.descrip,
+            description:categoryInput.description,
             status:categoryInput.status,
             meta_title:categoryInput.meta_title,
             meta_keyword:categoryInput.meta_keyword,
-            meta_descrip:categoryInput.meta_descrip,
+            meta_description:categoryInput.meta_description,
         }
 
         axios.post(`api/store-category`, data).then(res => {
@@ -99,11 +99,11 @@ function Category() {
                                 </div>
                                 <div className="form-group mb-3">
                                     <label>Description</label>
-                                    <textarea name="descrip" onChange={handleInput} value={categoryInput.descrip} className="form-control"></textarea>
+                                    <textarea name="description" onChange={handleInput} value={categoryInput.description} className="form-control"></textarea>
                                 </div>
                                 <div className="form-group mb-3">
                                     <label>Status</label>
-                                    <input type="checkbox" name="status" onChange={handleInput} value={categoryInput.status} /> Status 0=shown/1=hidden
+                                    <input type="checkbox" name="status" onChange={handleInput}  /> Status 0=shown/1=hidden
                                 </div>
 
                             </div>
@@ -119,7 +119,7 @@ function Category() {
                                 </div>
                                 <div className="form-group mb-3">
                                     <label>Meta Description</label>
-                                    <textarea name="meta_descrip" onChange={handleInput} value={categoryInput.meta_descrip} className="form-control"></textarea>
+                                    <textarea name="meta_description" onChange={handleInput} value={categoryInput.meta_description} className="form-control"></textarea>
                                 </div>
 
                             </div>

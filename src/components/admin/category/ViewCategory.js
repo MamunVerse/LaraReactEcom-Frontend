@@ -50,10 +50,12 @@ function ViewCategory() {
     }
 
     var viewcategory_HTMLTABLE = "";
+
     if(loading)
     {
         return <h4>Loading Category...</h4>
     }
+    
     else
     {
         viewcategory_HTMLTABLE = 
