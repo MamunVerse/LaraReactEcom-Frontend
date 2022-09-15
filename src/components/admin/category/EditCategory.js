@@ -38,7 +38,7 @@ function EditCategory(props)
         
         const category_id = props.match.params.id;
         const data = categoryInput;
-        axios.put(`/api/update-category/${category_id}`, data).then(res=>{
+        axios.post(`/api/update-category/${category_id}`, data).then(res=>{
             if(res.data.status === 200)
             {
                 swal("Success",res.data.message,"success");
@@ -100,7 +100,8 @@ function EditCategory(props)
                                 </div>
                                 <div className="form-group mb-3">
                                     <label>Status</label>
-                                    <input type="checkbox" name="status" onChange={handleInput} value={categoryInput.status} /> Status 0=shown/1=hidden
+                                    {/* <input type="checkbox" checked={ categoryInput.status === 1 ? 'checked' : '' } name="status" onChange={handleInput} /> */}
+                                    <input type="checkbox" name="status" value={categoryInput.status} onChange={handleInput} />
                                 </div>
 
                             </div>
@@ -117,7 +118,7 @@ function EditCategory(props)
                                 </div>
                                 <div className="form-group mb-3">
                                     <label>Meta Description</label>
-                                    <textarea name="meta_descrip" onChange={handleInput} value={categoryInput.meta_descrip} className="form-control"></textarea>
+                                    <textarea name="meta_description" onChange={handleInput} value={categoryInput.meta_description} className="form-control"></textarea>
                                 </div>
 
                             </div>

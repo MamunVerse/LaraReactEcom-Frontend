@@ -103,7 +103,7 @@ function Category() {
                                 </div>
                                 <div className="form-group mb-3">
                                     <label>Status</label>
-                                    <input type="checkbox" name="status" onChange={handleInput}  /> Status 0=shown/1=hidden
+                                    <input type="checkbox" name="status" onChange={handleInput}  />
                                 </div>
 
                             </div>
