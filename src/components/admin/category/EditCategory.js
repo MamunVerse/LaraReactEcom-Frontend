@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React, {useState, useEffect} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import axios from 'axios';
@@ -32,6 +33,7 @@ function EditCategory(props)
         e.persist();
         setCategory({...categoryInput, [e.target.name]: e.target.value });
     }
+
 
     const updateCategory = (e) => {
         e.preventDefault();
@@ -100,10 +102,11 @@ function EditCategory(props)
                                 </div>
                                 <div className="form-group mb-3">
                                     <label>Status</label>
-                                    {/* <input type="checkbox" checked={ categoryInput.status === 1 ? 'checked' : '' } name="status" onChange={handleInput} /> */}
-                                    <input type="checkbox" name="status" value={categoryInput.status} onChange={handleInput} />
+                                    <select  id="" name="status" onChange={handleInput} defaultValue={categoryInput.status}>
+                                        <option value="0" >Deactive</option>
+                                        <option value="1" >Active</option>
+                                    </select>
                                 </div>
-
                             </div>
                             <div className="tab-pane card-body border fade" id="seo-tags" role="tabpanel" aria-labelledby="seo-tags-tab">
 

@@ -32,6 +32,7 @@ function ViewCategory() {
         e.preventDefault();
         
         const thisClicked = e.currentTarget;
+        
         thisClicked.innerText = "Deleting";
 
         axios.delete(`/api/delete-category/${id}`).then(res=>{
