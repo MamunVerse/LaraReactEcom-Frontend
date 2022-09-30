@@ -103,8 +103,7 @@ function Category() {
                                 </div>
                                 <div className="form-group mb-3">
                                     <label>Status</label>
-                                    <select name="status"  id="" onChange={handleInput} defaultValue={'DEFAULT'}>
-                                        <option value="DEFAULT" disabled>Choose a salutation ...</option>
+                                    <select name="status"  id="" onChange={handleInput}>
                                         <option value="0">Deactive</option>
                                         <option value="1">Active</option>
                                     </select>
