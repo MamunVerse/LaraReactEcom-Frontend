@@ -32,10 +32,10 @@ function ViewCategory() {
         e.preventDefault();
         
         const thisClicked = e.currentTarget;
-        
+
         thisClicked.innerText = "Deleting";
 
-        axios.delete(`/api/delete-category/${id}`).then(res=>{
+        axios.post(`/api/delete-category/${id}`).then(res=>{
             if(res.data.status === 200)
             {
                 swal("Success",res.data.message,"success");

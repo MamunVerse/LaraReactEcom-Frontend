@@ -38,12 +38,9 @@ function ViewCategory()
             return (
                 <div className="col-md-4" key={idx}>
                     <div className="card">
-                        <Link to={`collections/${item.slug}`}>
-                            <img src="" className="w-100" alt={item.name} />
-                        </Link>
                         <div className="card-body">
                             <Link to={`collections/${item.slug}`}>
-                                <h5>{item.name}</h5>
+                                <h5>Name : {item.name} | Slug : {item.slug}</h5>
                             </Link>
                         </div>
                     </div>
@@ -58,7 +55,7 @@ function ViewCategory()
             <div>
                 <div className="py-3 bg-warning">
                     <div className="container">
-                        <h6>Category Page</h6>
+                        <h6>Category View Page </h6>
                     </div>
                 </div>
                 
