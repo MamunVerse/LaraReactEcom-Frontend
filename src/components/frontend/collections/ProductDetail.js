@@ -17,6 +17,7 @@ function ProductDetail(props)
 
         const category_slug = props.match.params.category;
         const product_slug = props.match.params.product;
+
         axios.get(`/api/viewproductdetail/${category_slug}/${product_slug}`).then(res=>{
             if(isMounted)
             {
@@ -49,6 +50,7 @@ function ProductDetail(props)
             setQuantity(prevCount => prevCount + 1);
         }
     }
+
     // Quantity Increment/Decrement in Hooks - End
 
     const submitAddtocart = (e) => {
@@ -118,15 +120,12 @@ function ProductDetail(props)
                     <h6>Collections / {product.category.name} / {product.name}</h6>
                 </div>
             </div>
-
             <div className="py-3">
                 <div className="container">
                     <div className="row">
-
                         <div className="col-md-4 border-end">
                             <img src={`http://localhost:8000/${product.image}`} alt={product.name} className="w-100" />
                         </div>
-
                         <div className="col-md-8">
                             <h4>
                                 {product.name}
@@ -134,17 +133,13 @@ function ProductDetail(props)
                             </h4>
                             <p> {product.description} </p>
                             <h4 className="mb-1"> 
-                                Rs: {product.selling_price}
-                                <s className="ms-2">  Rs: {product.original_price} </s>
+                                ${product.selling_price}
+                                <s className="ms-2"> ${product.original_price} </s>
                             </h4>
                             <div>
                                 {avail_stock}
                             </div>
-
-                            <button type="button" className="btn btn-danger mt-3">Add to Wishlist</button>
-                           
                        </div>
-
                     </div>
                 </div>
             </div>

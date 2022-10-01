@@ -49,6 +49,7 @@ function Cart()
         );
         updateCartQuantity(cart_id,"dec");
     }
+
     const handleIncrement = (cart_id) => {
         setCart(cart => 
             cart.map( (item) => 
@@ -57,9 +58,10 @@ function Cart()
         );
         updateCartQuantity(cart_id,"inc");
     }
+    
     function updateCartQuantity(cart_id,scope){
 
-        axios.put(`/api/cart-updatequantity/${cart_id}/${scope}`).then(res=>{
+        axios.post(`/api/cart-updatequantity/${cart_id}/${scope}`).then(res=>{
             if(res.data.status === 200){
                 // swal("Success",res.data.message,"success");
             }
@@ -72,7 +74,7 @@ function Cart()
         const thisClicked = e.currentTarget;
         thisClicked.innerText = "Removing";
 
-        axios.delete(`/api/delete-cartitem/${cart_id}`).then( res => {
+        axios.post(`/api/delete-cartitem/${cart_id}`).then( res => {
             if(res.data.status === 200)
             {
                 swal("Success",res.data.message,"success");
